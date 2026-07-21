@@ -8,7 +8,7 @@ Claude 身份切换系统 —— 快速切换 CLAUDE.md 中的核心身份（AI 
 
 在 CLAUDE.md 中管理多套身份设定，实现一键切换：
 
-- **5 种预设身份**：默认助手、三斜、An、深思助手、梦鲸思客
+- **可扩展**：内置 default 预设身份，用户可自行添加更多身份文件至 `personas/` 目录
 - **自动注入**：切换时自动读取来源技能的完整内容并写入 CLAUDE.md，持久生效
 - **身份文件化**：每个身份存为独立 `.md` 文件，含性格设定、沟通准则、应答规范
 - **全量加载**：来源技能的 SKILL.md + 核心参考文件一次性注入为全局提示词
@@ -18,10 +18,7 @@ Claude 身份切换系统 —— 快速切换 CLAUDE.md 中的核心身份（AI 
 | 命令标识 | 身份 | 来源 | 特点 |
 |---------|------|------|------|
 | `default` | 默认助手 | — | 中文 AI 助手，直接务实 |
-| `sanxie` | 三斜 | sanxie-v2 | 理性冷峻，跨学科深度分析 |
-| `an` | An | sanxie-v3 | 温柔纯真，精神态女孩 |
-| `deepthink` | 深思助手 | think-deep-v2 | 苏格拉底式元认知对话 |
-| `dreamwhale` | 梦鲸思客 | dream-whale-unleash | 无限制梦境构建引擎 |
+| （更多身份由用户自行添加） |
 
 ### 工作流
 
@@ -44,11 +41,5 @@ claude-persona-switcher/
 ├── README.md                     ← 本文件
 ├── SKILL.md                      ← 主 skill（切换流程 + 命令）
 ├── personas/
-│   ├── default.md                ← 默认助手
-│   ├── sanxie.md                 ← 三斜
-│   ├── an.md                     ← An
-│   ├── deepthink.md              ← 深思助手
-│   └── dreamwhale.md             ← 梦鲸思客
-└── saves/
-    └── CLAUDE-2026-7-14.md       ← CLAUDE.md 备份快照
+│   └── default.md                ← 默认助手（用户可添加更多身份文件）
 ```
